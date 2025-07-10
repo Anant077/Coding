@@ -1,0 +1,9 @@
+SELECT ROUND(
+    ABS(MIN(LAT_N) - MAX(LAT_N)) + 
+    ABS(MIN(LONG_W) - MAX(LONG_W)), 
+    4
+) AS manhattan_distance
+FROM STATION;
+
+// in sql modulus is defined by abs 
+// 4 is upto 4 decimal 
