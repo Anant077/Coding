@@ -11,3 +11,11 @@ WHERE LAT_N = (
 SELECT FLOOR(AVG(Population)) AS AveragePopulation
 FROM CITY;
 // floor is used for rounded down to the nearest integer.
+// 4.9 -> 4
+
+SELECT CEIL(
+  AVG(Salary) - AVG(CAST(REPLACE(Salary, '0', '') AS UNSIGNED))
+) AS ErrorAmount
+FROM EMPLOYEES;
+// ceil is for round up 
+// 4.9 -> 5
