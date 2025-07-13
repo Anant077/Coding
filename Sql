@@ -19,3 +19,16 @@ SELECT CEIL(
 FROM EMPLOYEES;
 // ceil is for round up 
 // 4.9 -> 5
+
+SELECT 
+  m.match_id,
+  m.player1 AS player_1,
+  m.player2 AS player_2,
+  m.winner,
+  m.match_date,
+  p.score
+FROM Matches m
+JOIN Players p ON m.winner = p.player_name
+ORDER BY m.match_date DESC
+LIMIT 5;
+// join question
