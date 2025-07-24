@@ -7,3 +7,15 @@ SELECT ROUND(
 FROM STATION;
 
 // euclidean distance 
+
+SELECT DISTINCT mo.movie_title AS movie_title
+FROM movies mo
+JOIN movies_cast mc ON mo.movie_id = mc.movie_id
+WHERE mc.actor_id IN (
+    SELECT actor_id
+    FROM movies_cast
+    GROUP BY actor_id
+    HAVING COUNT(DISTINCT movie_id) >= 2
+);
+
+// used joins and aggregate functions
